@@ -1,6 +1,4 @@
-# C#-AplikacjaKonsolowa
-Aplikacja konsolowa Egzaminu Zawodowego INF.04 - Sesja 2022, Styczeń 01 - C#
+# Cpp-AplikacjaKonsolowa
+ Aplikacja konsolowa Egzaminu Zawodowego INF.04 - Sesja 2022, Styczeń 01 - C#
 
-### Lista poprzednich zadań:
-
-- [Styczen 2022, zadanie 01](https://github.com/INF-04/Csharp-AplikacjaKonsolowa/tree/2022-01-Styczen)
+[Link do arkusza](https://arkusze.pl/zawodowy/inf04-2022-styczen-egzamin-zawodowy-praktyczny.pdf)
