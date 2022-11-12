@@ -1,59 +1,14 @@
-using System;
-using System.Collections.Generic;
+﻿using inf04_c;
 
-namespace inf04
-{
-    internal static class Program
-    {
-        private const int NumberOfElements = 10;
+var arr = new int[50];
+arr.Fill();
 
-        private static int[] _integerArray = new int[NumberOfElements]; 
+Console.WriteLine("Podaj liczbe do wyszukania: ");
 
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("Wczytywanie z klawiatury: ");
-            
-            for (var i = 0; i < NumberOfElements; i++)
-            {
-                var add = int.Parse(Console.ReadLine());
+var number = int.Parse(Console.ReadLine() ?? "0");
 
-                _integerArray[i] = add;
-            }
-            
-            SelectionSort(_integerArray);
-            
-            Console.WriteLine("Po sortowaniu: ");
-            
-            foreach (var item in _integerArray)
-            {
-                Console.WriteLine(item);
-            }
+var index = Solution.Search(arr, number);
 
-            Console.WriteLine("Najwieksza liczba w tablicy: ");
-            Console.WriteLine(GetHighestNumber(_integerArray));
-        }
+Console.WriteLine($"index liczby: {number} to: {index}");
 
-        private static int[] SelectionSort(int[] list)
-        {
-            for (var i = 0; i < NumberOfElements - 1 ; i++)
-            {
-                var max = i;
-
-                for (var j = i + 1 ; j < NumberOfElements; j++)
-                {
-                    if (list[max] < list[j])
-                        max = j;
-                }
-                
-                (list[max], list[i]) = (list[i], list[max]);
-            }
-
-            return list;
-        }
-
-        private static int GetHighestNumber(IList<int> list)
-        {
-            return list[0];
-        }
-    }
-}
+Console.WriteLine(arr[index] == number ? "Liczba jest poprawna" : "Liczba nie jest poprawna");
