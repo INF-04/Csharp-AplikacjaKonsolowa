@@ -5,55 +5,29 @@ namespace inf04
 {
     internal static class Program
     {
-        private const int NumberOfElements = 10;
+        public static int Nwd(int a, int b)
+        {
+            while (a != b)
+            {
+                if (a > b)
+                {
+                    a -= b;
+                }
+                else
+                {
+                    b -= a;
+                }
+            }
 
-        private static int[] _integerArray = new int[NumberOfElements]; 
+            return a;
+        }
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Wczytywanie z klawiatury: ");
-            
-            for (var i = 0; i < NumberOfElements; i++)
-            {
-                var add = int.Parse(Console.ReadLine());
+            var a = int.Prase(Console.ReadLine());
+            var b = int.Prase(Console.ReadLine());
 
-                _integerArray[i] = add;
-            }
-            
-            SelectionSort(_integerArray);
-            
-            Console.WriteLine("Po sortowaniu: ");
-            
-            foreach (var item in _integerArray)
-            {
-                Console.WriteLine(item);
-            }
-
-            Console.WriteLine("Najwieksza liczba w tablicy: ");
-            Console.WriteLine(GetHighestNumber(_integerArray));
-        }
-
-        private static int[] SelectionSort(int[] list)
-        {
-            for (var i = 0; i < NumberOfElements - 1 ; i++)
-            {
-                var max = i;
-
-                for (var j = i + 1 ; j < NumberOfElements; j++)
-                {
-                    if (list[max] < list[j])
-                        max = j;
-                }
-                
-                (list[max], list[i]) = (list[i], list[max]);
-            }
-
-            return list;
-        }
-
-        private static int GetHighestNumber(IList<int> list)
-        {
-            return list[0];
+            Console.WriteLine(Nwd(a, b));
         }
     }
 }
